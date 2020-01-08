@@ -28,6 +28,30 @@ I would like Food for Thought to show me the recipe
 
 ```
 As a user
+So that I don't need to buy many more ingredients
+I would like Food for Thought to prioritise recipes by number of ingredients
+```
+
+```
+As a user
+So that I can write my shopping list
+I would like Food for Thought to show me missing ingredients
+```
+
+```
+As a user
+To help me decide which recipe to choose
+I would like Food for Thought to show me a picture of the recipe
+```
+
+```
+As a user
 So that I can store my recipes
 I would like to sign up for an account
+```
+
+```
+As a user
+So that I can review my recipes
+I would like to be able to log in
 ```
