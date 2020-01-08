@@ -21,7 +21,7 @@ I would like Food for Thought to recommend me some recipes
 ```
 As a user
 So that I know how to cook a meal
-I would like Food for Thought to show me the recipe that I choose
+I would like Food for Thought to show me the recipe
 ```
 
 ### Further User Stories
