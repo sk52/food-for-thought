@@ -7,13 +7,21 @@ addons:
       # Ubuntu 16+ does not install this dependency by default, so we need to install it ourselves
       - libgconf-2-4
 cache:
-  # Caches $HOME/.npm when npm ci is default script command
-  # Caches node_modules in all other cases
-  npm: true
+  # cache both npm modules and Cypress binary
   directories:
-    # we also need to cache folder with Cypress binary
+    - ~/.npm
     - ~/.cache
-install:
-  - npm ci
+  # install dependencies and check that Cypress can run
+  override:
+    - npm ci
+    - npm run cy:verify
+
 script:
-  - $(npm bin)/cypress run --record
+  # start server in the background
+  - npm run start:ci &
+  # run all Cypress tests and record on the dashboard
+  - npm run cy:run -- --record
+  # after all tests finish running we need
+  # to kill all background jobs (like "npm start &")
+  # this avoids flake in Travis jobs
+  - kill $(jobs -p) || true
