@@ -3,3 +3,12 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  p Type in your ingredients below:
+
+  form(action="/recipes", name="add-estimation", method="post")
+        div.input
+            span.label Ingredients 
+            input(id="title", type="text", name="ingredient")
+        div.actions
+            input(type="submit", value="show recipes")
+
