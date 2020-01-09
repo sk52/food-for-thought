@@ -29,6 +29,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Welcome to the product list</h1>
       <ul className="list">
         {(products && products.length > 0) ? (
           products.map(product => renderProduct(product))
