@@ -2,6 +2,11 @@
 
 A web application which allows users to find a recipe based on the ingredients that they input.
 
+## Tech Stack
+* MongoDB, Express, React, Node.js
+* Jest and Cypress for testing, Travis for CI
+* Heroku for deployment
+
 ## Getting Started
 
 * Clone this repo
