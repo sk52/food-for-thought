@@ -1,20 +1,37 @@
 {
   "name": "food-for-thought",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "A web application which allows users to find a recipe based on the ingredients that they input.",
+  "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "start": "node ./bin/www"
+    "test": "npm run test:integration && npm run test:unit",
+    "test:unit": "jest",
+    "test:integration": "cd ./client && npm run test:integration",
+    "client": "npm run start --prefix client",
+    "server": "nodemon index.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "start": "node index.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sk52/food-for-thought.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sk52/food-for-thought/issues"
+  },
+  "homepage": "https://github.com/sk52/food-for-thought#readme",
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "jade": "~1.11.0",
-    "morgan": "~1.9.1"
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.6"
   },
   "devDependencies": {
-    "jest": "^24.9.0"
+    "concurrently": "^5.0.2",
+    "jest": "^24.9.0",
+    "nodemon": "^2.0.2"
   }
 }
