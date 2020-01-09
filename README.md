@@ -4,31 +4,9 @@ A web application which allows users to find a recipe based on the ingredients t
 
 ## Getting Started
 
-### Clone the Repo
-
-```
-git clone https://github.com/sk52/food-for-thought.git
-```
-
-### Running Tests Locally
-
-Run the app locally:
-
-```
-npm run dev
-```
-
-In a new terminal, change directory to `food-for-thought/client`:
-
-```
-cd client
-```
-
-Once in `food-for-thought/client`, run the cypress tests:
-
-```
-npx cypress run
-```
+* Clone this repo
+* Open
+* Run `npm install` followed by `npm run dev`
 
 ## User Stories
 
