@@ -34,7 +34,7 @@ router.post('/recipes',function(req,res){
   apiReq.end(function (res) {
     if (res.error) throw new Error(res.error);
     apiResult = res.body
-    console.log(res.body.title);
+    console.log(res.body);
   });
   console.log(apiResult)
   res.render('recipes', { title: 'Recipes', result: apiResult});
