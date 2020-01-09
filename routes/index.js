@@ -6,4 +6,15 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-module.exports = router;
+console.log('hello')
+
+router.post('/recipes',function(req,res){
+  console.log(req.body.title);
+  res.render('recipes', { title: 'Recipes' });
+  // res.send("yolo")
+})
+
+
+
+
+
