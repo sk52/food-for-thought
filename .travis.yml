@@ -20,13 +20,11 @@ before_install:
 before_script:
   # install dependencies
   - npm install --save-dev concurrently wait-on
-  # start server in the background
-  - npm run dev &
 script:
   # run all Jest tests
   - npm test
   # run all Cypress tests and record on the dashboard
-  - npm run test:integration
+  # - npm run test:integration
   # after all tests finish running we need
   # to kill all background jobs (like "npm start &")
   # this avoids flake in Travis jobs
