@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,58 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App{
+  width: 100vw;
+  height: 100vh;
+}
+
+.nav{
+  background-color: grey;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0px 30px, 30px 0px;
+  box-shadow: 2px 2px 15px 12px #686868 inset;
+}
+
+.home {
+  margin-top: 0.5rem;
+  margin-left: 2rem;
+  font-size: 3rem;
+  color: white;
+  font-family: 'Montserrat','Ibarra Real Nova', sans-serif;
+  text-decoration: none;
+}
+
+.home:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.sign-up {
+  font-family: 'Raleway', 'Montserrat', sans-serif;
+  margin-right: 2rem;
+  margin-top: 1rem;
+  height: 4rem;
+  width: 6rem;
+  border-radius: 6px;
+  font-size: 1.35rem;
+  background-color: #AED7CE;
+  border-color: #AED7CE;
+  transition: background-color 1s, color 1s, border-color 1s;
+  box-shadow: 1px 2px 15px 2px #686868 ;
+}
+
+.sign-up:hover {
+  background-color: #6F8E87;
+  border-color: #6F8E87;
+  color: white;
+  text-decoration: none;
 }
