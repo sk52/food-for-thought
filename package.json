@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run test:integration && npm run test:unit",
-    "test:unit": "jest",
+    "test:unit": "cd ./client && npm test",
     "test:integration": "cd ./client && npm run test:integration",
     "client": "npm run start --prefix client",
     "server": "nodemon index.js",
