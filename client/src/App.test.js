@@ -4,6 +4,6 @@ import App from './App';
 
 test('shows welcome message', () => {
   const { getByText } = render(<App />);
-  const title = getByText(/Welcome to the product list/i);
+  const title = getByText(/Need a sprinkling of inspiration in the kitchen/i);
   expect(title).toBeInTheDocument();
 })
