@@ -1,5 +1,6 @@
 {
   "baseUrl": "http://localhost:3000",
   "projectId": "epdix2",
-  "video": false
+  "video": false,
+  "screenshotOnRunFailure":false
 }

@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Recipe from './Recipe';
+import {BrowserRouter as DB} from 'react-router-dom';
+import NavBar from './components/Navbar';
+import Header from './components/Header';
+import Search from './components/Search';
+import './App.css';
 
 function App() {
   const [products, setproducts] = useState(null);
@@ -31,7 +36,14 @@ function App() {
   }
   
   return (
-    <div className="App">
+    <DB>
+      <div className="App">
+        <NavBar/>
+        <Header />
+        <Search />
+      </div>
+
+      <div className="App">
       <h1 className="title">Welcome to the product list</h1>
       <form onSubmit={getSearch} className="search-form"> 
         <input className="search-bar" type="text" value={search} onChange={updateSearch} />
@@ -41,6 +53,7 @@ function App() {
         ))}
       </form>
     </div>
+    </DB>
   );
 }
 
