@@ -63,19 +63,21 @@
 }
 
 .search {
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
   padding-top: 10rem;
   margin-bottom: 10rem;
 }
 
 .input {
+  font-size: 1.5rem;
   width: 45vw;
   border-radius: 6px;
   border: 2px solid grey;
+  padding: 8px;
 }
 
-.submit {
+.search-button {
   border-radius: 6px;
   border: 2px solid grey;
   font-size: 1.5rem;

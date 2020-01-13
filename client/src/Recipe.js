@@ -1,22 +1,21 @@
-import React from "react"; 
+import React from "react";
 
-const Recipe = ({title, image, time, cuisine, servings, instructions}) => {
-    return(
-        <div>
-            <h1>{title}</h1>
-            <ol>
-                Make this with:
-            </ol>
-                <img className={image} src={image} alt=""/>
-            <ol>Ready in {time} minutes.</ol>
-            <ol>Serves up to {servings}</ol>
-            <ul>
-                {cuisine.map((cuisine,index) =>
-                    <li key={index}>{cuisine}</li>
-                )}
-            </ul>
-        </div>
-    );
-}
+const Recipe = ({ title, image, time, cuisine, servings, instructions }) => {
+  return (
+    <div>
+      <h1>{title}</h1>
+      <ol>Make this with:</ol>
 
-export default Recipe; 
+      <img className={image} src={image} alt="" />
+      <ol>Ready in {time} minutes.</ol>
+      <ol>Serves up to {servings}</ol>
+      <ul>
+        {cuisine.map((cuisine, index) => (
+          <li key={index}>{cuisine}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default Recipe;
