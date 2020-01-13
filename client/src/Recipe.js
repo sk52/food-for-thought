@@ -1,15 +1,20 @@
 import React from "react"; 
 
-const Recipe = ({title, image, ingredients}) => {
+const Recipe = ({title, image, time, cuisine, servings, instructions}) => {
     return(
         <div>
             <h1>{title}</h1>
             <ol>
-                {ingredients.map(ingredient =>
-                   <li>{ingredient.name}</li> 
-                )}
+                Make this with:
             </ol>
-            <img src={image} alt=""/>
+                <img className={image} src={image} alt=""/>
+            <ol>Ready in {time} minutes.</ol>
+            <ol>Serves up to {servings}</ol>
+            <ul>
+                {cuisine.map((cuisine,index) =>
+                    <li key={index}>{cuisine}</li>
+                )}
+            </ul>
         </div>
     );
 }
