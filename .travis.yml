@@ -15,8 +15,6 @@ cache:
   override:
     - npm ci
     - npm run cy:verify
-before_install:
-  - cd $TRAVIS_BUILD_DIR/client
 script:
   - npm run dev & npm run test
   # after all tests finish running we need
