@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import Recipe from "../Recipe";
 
 function Search() {
-  //   const [products, setproducts] = useState(null);
-
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("tomato, cheese");
@@ -14,7 +12,6 @@ function Search() {
 
   const getRecipes = async () => {
     const API_KEY = process.env.REACT_APP_RECIPE_API_KEY;
-    console.log(API_KEY);
     const response = await fetch(
       `https://api.spoonacular.com/recipes/complexSearch?query=${query}` +
         `&sort=popularity` +
@@ -25,7 +22,6 @@ function Search() {
         `&apiKey=${API_KEY}`
     );
     const data = await response.json();
-    console.log(data.results);
     setRecipes(data.results);
   };
 
