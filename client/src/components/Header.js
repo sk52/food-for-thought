@@ -6,7 +6,7 @@ function Header() {
     <div className="header">
       <p>Need a sprinkling of inspiration in the kitchen?</p>
       <p>Let me pepper your thoughts!</p>
-      <p><img src={logo} width="125" height="225" alt="pepper your thoughts" /></p>
+      <p><img src={logo} width="180" height="225" alt="pepper your thoughts" /></p>
     </div>
   );
 }
