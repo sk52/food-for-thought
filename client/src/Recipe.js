@@ -10,19 +10,12 @@ const Recipe = ({title, image, time, cuisine, servings, instructions}) => {
                 <img className={image} src={image} alt=""/>
             <ol>Ready in {time} minutes.</ol>
             <ol>Serves up to {servings}</ol>
-            
             <ul>
                 {cuisine.map((cuisine,index) =>
                     <li key={index}>{cuisine}</li>
                 )}
             </ul>
-            {/* <ul>
-                {instructions.map(instruction =>
-                    <li key={instruction}>{instruction}</li>
-                )}
-            </ul> */}
         </div>
-
     );
 }
 

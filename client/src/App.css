@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat','Ibarra Real Nova', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App{
+  width: 100vw;
+  height: 100vh;
+  /* background-color: #c9d1ff; */
+  background-color: #d6dee1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav{
+  background-color: #7092a3;
+  height: 10vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  border-radius: 0px 30px, 30px 0px;
+  /* box-shadow: 2px 2px 15px 12px #686868; */
+}
+
+.home {
+  margin-top: 0.5rem;
+  margin-left: 2rem;
+  font-size: 3rem;
+  color: white;
+  /* font-family: 'Montserrat','Ibarra Real Nova', sans-serif; */
+  text-decoration: none;
+}
+
+.home:hover {
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.sign-up {
+  font-family: 'Raleway', 'Montserrat', sans-serif;
+  margin-right: 2rem;
+  margin-top: 1rem;
+  height: 4rem;
+  width: 6rem;
+  border-radius: 6px;
+  font-size: 1.35rem;
+  background-color: #AED7CE;
+  border-color: #AED7CE;
+  transition: background-color 1s, color 1s, border-color 1s;
+  box-shadow: 1px 2px 15px 2px #686868 ;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sign-up:hover {
+  background-color: #6F8E87;
+  border-color: #6F8E87;
+  color: white;
+  text-decoration: none;
+}
+
+.header {
+  font-size: 1.5rem;
+  text-align: center;
+  height: 10rem;
+  margin-top: 2rem;
+}
+
+.search {
+  font-size: 2rem;
+  text-align: center;
+  padding-top: 10rem;
+  margin-bottom: 10rem;
+}
+
+.input {
+  width: 45vw;
+  border-radius: 6px;
+  border: 2px solid grey;
+}
+
+.submit {
+  border-radius: 6px;
+  border: 2px solid grey;
+  font-size: 1.5rem;
+  padding: 8px;
 }
