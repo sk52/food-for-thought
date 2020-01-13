@@ -6,7 +6,7 @@ function App() {
 
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState(''); 
-  const [query, setQuery] = useState('apple, banana')
+  const [query, setQuery] = useState('tomato, cheese')
 
   useEffect(() => {
     getRecipes();
@@ -15,10 +15,17 @@ function App() {
   const getRecipes = async () => {
     const API_KEY = process.env.REACT_APP_RECIPE_API_KEY;
     console.log(API_KEY);
-    const response = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?&ingredients=${query}?&apiKey=${API_KEY}`)
+    const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${query}`
+   + `&sort=popularity`
+   + `&sortDirection=desc`
+   + `&number=10` 
+   + `&addRecipeInformation=true` 
+   + `&ignorePantry=true` 
+   + `&apiKey=${API_KEY}`
+   ); 
     const data = await response.json();
-    console.log(data);
-    setRecipes(data);
+    console.log(data.results);
+    setRecipes(data.results);
   };
 
   const updateSearch = e => {
@@ -37,7 +44,15 @@ function App() {
         <input className="search-bar" type="text" value={search} onChange={updateSearch} />
         <button className="search-button" type="submit">SEARCH</button>
         {recipes.map((recipe, index) =>(
-          <Recipe key={recipe.title} title={recipe.title} image={recipe.image} ingredients={recipe.usedIngredients} />
+          <Recipe
+            key={recipe.title} 
+            title={recipe.title} 
+            image={recipe.image} 
+            time={recipe.readyInMinutes}
+            cuisine={recipe.cuisines}
+            servings={recipe.servings} 
+            // instructions={recipe.analyzedInstructions.name.steps.step}
+          />
         ))}
       </form>
     </div>
