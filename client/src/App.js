@@ -4,7 +4,6 @@ import Recipe from './Recipe';
 function App() {
   const [products, setproducts] = useState(null);
 
-  const API_KEY = process.env.REACT_APP_RECIPE_API_KEY;
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState(''); 
   const [query, setQuery] = useState('apple, banana')
@@ -14,6 +13,7 @@ function App() {
     }, [query]);
 
   const getRecipes = async () => {
+    const API_KEY = process.env.REACT_APP_RECIPE_API_KEY;
     console.log(API_KEY);
     const response = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?&ingredients=${query}?&apiKey=${API_KEY}`)
     const data = await response.json();
