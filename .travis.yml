@@ -17,14 +17,8 @@ cache:
     - npm run cy:verify
 before_install:
   - cd $TRAVIS_BUILD_DIR/client
-before_script:
-  # install dependencies
-  - npm install --save-dev concurrently wait-on
 script:
-  # run all Jest tests
-  - npm test
-  # run all Cypress tests and record on the dashboard
-  # - npm run test:integration
+  - npm run dev & npm run test
   # after all tests finish running we need
   # to kill all background jobs (like "npm start &")
   # this avoids flake in Travis jobs
