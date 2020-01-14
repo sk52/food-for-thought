@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Recipe from "../Recipe";
+import axios from 'axios';
 
 function Search() {
   const [recipes, setRecipes] = useState([]);
@@ -7,23 +8,18 @@ function Search() {
   const [query, setQuery] = useState("tomato, cheese");
 
   useEffect(() => {
+    const getRecipes = async () => {
+      let recipesData = await axios.get(
+        `/api/recipe/by-ingredients/${query}`
+        )
+        .then(response => {
+          return response.data.recipes;
+        });
+      setRecipes(recipesData.results);
+    };
+    
     getRecipes();
   }, [query]);
-
-  const getRecipes = async () => {
-    const API_KEY = process.env.REACT_APP_RECIPE_API_KEY;
-    const response = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?query=${query}` +
-        `&sort=popularity` +
-        `&sortDirection=desc` +
-        `&number=10` +
-        `&addRecipeInformation=true` +
-        `&ignorePantry=true` +
-        `&apiKey=${API_KEY}`
-    );
-    const data = await response.json();
-    setRecipes(data.results);
-  };
 
   const updateSearch = e => {
     setSearch(e.target.value);
