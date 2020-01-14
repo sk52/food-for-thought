@@ -22,7 +22,6 @@
     "eject": "react-scripts eject",
     "test:integration": "npx cypress run"
   },
-  "proxy": "http://localhost:5000",
   "eslintConfig": {
     "extends": "react-app"
   },
