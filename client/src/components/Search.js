@@ -8,18 +8,18 @@ function Search() {
   const [query, setQuery] = useState("tomato, cheese");
 
   useEffect(() => {
+    const getRecipes = async () => {
+      let recipesData = await axios.get(
+        `/api/recipe/by-ingredients/${query}`
+        )
+        .then(response => {
+          return response.data.recipes;
+        });
+      setRecipes(recipesData.results);
+    };
+    
     getRecipes();
   }, [query]);
-
-  const getRecipes = async () => {
-    let recipesData = await axios.get(
-      `/api/recipe/by-ingredients/${query}`
-      )
-      .then(response => {
-        return response.data.recipes;
-      });
-    setRecipes(recipesData.results);
-  };
 
   const updateSearch = e => {
     setSearch(e.target.value);
