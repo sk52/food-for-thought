@@ -27,12 +27,8 @@ if (process.env.NODE_ENV === 'production') {
 
 const PORT = process.env.PORT || 5000;
 
-app.get('/api/test/:params', (req, res) => {
-  let params = req.params['params'];
-  res.json({test: "a test json response", params: `${params}`});
-});
-
 app.get('/api/recipe/by-ingredients/:ingredients', async (req, res) => {
+  console.log("backend route recipe/by-ingredients has been reached");
   const query = req.params['ingredients'];
   const API_KEY = process.env.REACT_APP_RECIPE_API_KEY;
   const response = await fetch(
@@ -44,11 +40,11 @@ app.get('/api/recipe/by-ingredients/:ingredients', async (req, res) => {
       `&ignorePantry=true` +
       `&apiKey=${API_KEY}`
   );
-  const data = await response.json();
+  const recipes = await response.json();
 
   return res.status(200).send({
     error: false,
-    data
+    recipes
   })
 });
 
