@@ -19,7 +19,6 @@ require('./routes/productRoute')(app);
 const PORT = process.env.PORT || 5000;
 
 app.get('/api/recipe/by-ingredients/:ingredients', async (req, res) => {
-  console.log("backend route recipe/by-ingredients has been reached");
   const query = req.params['ingredients'];
   const API_KEY = process.env.REACT_APP_RECIPE_API_KEY;
   const response = await fetch(
