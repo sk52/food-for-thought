@@ -14,10 +14,6 @@
 .nav{
   background-color: #7092a3;
   height: 10vh;
-  display: flex;
-  justify-content: space-between;
-  border-radius: 0px 30px, 30px 0px;
-  /* box-shadow: 2px 2px 15px 12px #686868; */
 }
 
 .home {
@@ -28,33 +24,6 @@
   /* font-family: 'Montserrat','Ibarra Real Nova', sans-serif; */
   text-decoration: none;
 }
-
-.home:hover {
-  text-decoration: none;
-  color: white;
-}
-
-.sign-up {
-  font-family: 'Raleway', 'Montserrat', sans-serif;
-  margin-right: 2rem;
-  margin-top: 1rem;
-  height: 4rem;
-  width: 6rem;
-  border-radius: 6px;
-  font-size: 1.35rem;
-  background-color: #AED7CE;
-  border-color: #AED7CE;
-  transition: background-color 1s, color 1s, border-color 1s;
-  box-shadow: 1px 2px 15px 2px #686868 ;
-}
-
-.sign-up:hover {
-  background-color: #6F8E87;
-  border-color: #6F8E87;
-  color: white;
-  text-decoration: none;
-}
-
 .header {
   font-size: 1.5rem;
   text-align: center;
@@ -79,7 +48,9 @@
 
 .search-button {
   border-radius: 6px;
+  background-color: #AED7CE;
   border: 2px solid grey;
   font-size: 1.5rem;
   padding: 8px;
+  box-shadow: 1px 2px 15px 2px #686868;
 }
