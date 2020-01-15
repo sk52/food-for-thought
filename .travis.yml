@@ -15,13 +15,14 @@ cache:
   override:
     - npm ci
     - npm run cy:verify
+before_install:
+  - cd $TRAVIS_BUILD_DIR/client
 before_script:
   # install dependencies
   - npm install --save-dev concurrently wait-on
 script:
-  - npm run test
   # run all Jest tests
-  # - npm test:integration
+  - npm test
   # run all Cypress tests and record on the dashboard
   # - npm run test:integration
   # after all tests finish running we need
