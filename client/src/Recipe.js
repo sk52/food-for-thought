@@ -13,18 +13,12 @@ import {
   ModalFooter
 } from "reactstrap";
 
-// const [modal, setModal] = useState(false);
-
-// const toggle = () => setModal(!modal);
-
 const Recipe = ({
   title,
   image,
   time,
-  cuisine,
   servings,
   wines,
-  //wineList, //keep if can fix wine list mapping
   ingredients,
   instructions,
   sourceUrl,
