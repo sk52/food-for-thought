@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Recipe from "../Recipe";
+import Recipe from "./Recipe";
 import axios from 'axios';
 
 function Search() {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
-  const [query, setQuery] = useState("tomato, cheese");
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     const getRecipes = async () => {
@@ -13,6 +13,7 @@ function Search() {
         `/api/recipe/by-ingredients/${query}`
         )
         .then(response => {
+          console.log(response.data.recipes)
           return response.data.recipes;
         });
       setRecipes(recipesData.results);
@@ -29,9 +30,10 @@ function Search() {
     e.preventDefault();
     setQuery(search);
   };
+
   return (
     <div className="search">
-      <p>Enter the ingredients you want to use here:</p>
+      <p>Enter the ingredients you want to use, then click 'Season me up!'</p>
       <br />
       <form onSubmit={getSearch} className="search-form">
         <input
@@ -44,7 +46,7 @@ function Search() {
         <br />
         <br />
         <button className="search-button" type="submit">
-          Season me!
+          Season me up!
         </button>
         <br />
         <br />
@@ -65,6 +67,7 @@ function Search() {
             sourceName={recipe.sourceName}
             diets={recipe.diets}
           />
+     
         ))}
       </form>
     </div>
