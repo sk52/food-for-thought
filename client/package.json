@@ -20,7 +20,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test:integration": "npx cypress run"
+    "test:integration": "cd ../ & npm run dev & cd ./client & npx cypress run",
+    "test:all": "test && test:integration"
   },
   "proxy": "http://localhost:5000",
   "eslintConfig": {
