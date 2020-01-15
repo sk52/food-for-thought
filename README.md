@@ -3,7 +3,7 @@
 A web application which allows users to find a recipe based on the ingredients that they input.
 
 ## Tech Stack
-* Express, React, Node.js
+* MongoDB, Express, React, Node.js
 * Jest and Cypress for testing, Travis for CI
 * Heroku for deployment
 
@@ -48,6 +48,8 @@ I would like Food for Thought to prioritise recipes by popularity
 ```
 
 ### Outstanding User Stories
+
+_User accounts require MongoDB_ 
 
 ```
 As a user
