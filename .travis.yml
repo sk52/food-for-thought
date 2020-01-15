@@ -22,7 +22,7 @@ before_script:
   - npm install --save-dev concurrently wait-on
 script:
   # run all Jest tests
-  - npm test:all
+  - npm test:integration
   # run all Cypress tests and record on the dashboard
   # - npm run test:integration
   # after all tests finish running we need
