@@ -7,3 +7,9 @@ test('shows welcome message', () => {
   const title = getByText(/Need a sprinkling of inspiration in the kitchen/i);
   expect(title).toBeInTheDocument();
 })
+
+test('shows input button', () => {
+  const { getByText } = render(<App />);
+  const inputButton = getByText(/Season me!/i);
+  expect(inputButton).toBeInTheDocument();
+})
