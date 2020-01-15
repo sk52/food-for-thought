@@ -4,7 +4,7 @@
   "description": "A web application which allows users to find a recipe based on the ingredients that they input.",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test:integration && npm run test:unit",
+    "test": "npm run dev & npm run test:unit & npm run test:integration",
     "test:unit": "cd ./client && npm test",
     "test:integration": "cd ./client && npm run test:integration",
     "client": "npm run start --prefix client",
