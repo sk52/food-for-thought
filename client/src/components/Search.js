@@ -56,6 +56,14 @@ function Search() {
             time={recipe.readyInMinutes}
             cuisine={recipe.cuisines}
             servings={recipe.servings}
+            instructions={recipe["analyzedInstructions"]["0"]["steps"]}
+            wines={recipe["winePairing"]["pairingText"]}
+            wineList={recipe["winePairing"]["pairedWines"]}
+            ingredients={recipe["missedIngredients"]}
+            steps={recipe["analyzedInstructions"]["0"]["steps"]}
+            sourceUrl={recipe.sourceUrl}
+            sourceName={recipe.sourceName}
+            diets={recipe.diets}
           />
         ))}
       </form>

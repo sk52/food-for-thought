@@ -29,6 +29,8 @@ app.get('/api/recipe/by-ingredients/:ingredients', async (req, res) => {
       `&number=10` +
       `&addRecipeInformation=true` +
       `&ignorePantry=true` +
+      `&instructionsRequired=true` +
+      '&fillIngredients=true' +
       `&apiKey=${API_KEY}`
   );
   const recipes = await response.json();
