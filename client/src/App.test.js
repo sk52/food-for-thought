@@ -2,14 +2,12 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import App from './App';
 
-test('shows welcome message', () => {
-  const { getByText } = render(<App />);
-  const title = getByText(/Need a sprinkling of inspiration in the kitchen/i);
-  expect(title).toBeInTheDocument();
+test('renders navbar', () => {
+  const { container } = render(<App />);
+  expect(container.firstChild.firstChild).toHaveClass('nav');
 })
 
-test('shows input button', () => {
-  const { getByText } = render(<App />);
-  const inputButton = getByText(/Season me!/i);
-  expect(inputButton).toBeInTheDocument();
+test('renders header', () => {
+  const { container } = render(<App />);
+  expect(container.firstChild.firstChild.nextSibling).toHaveClass('header');
 })
