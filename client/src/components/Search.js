@@ -1,19 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Recipe from "../Recipe";
+import Recipe from "./Recipe";
 import axios from 'axios';
-import {
-  Card,
-  CardImg,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  Button,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter
-} from "reactstrap";
 
 function Search() {
   const [recipes, setRecipes] = useState([]);
@@ -26,6 +13,7 @@ function Search() {
         `/api/recipe/by-ingredients/${query}`
         )
         .then(response => {
+          console.log(response.data.recipes)
           return response.data.recipes;
         });
       setRecipes(recipesData.results);
@@ -42,13 +30,6 @@ function Search() {
     e.preventDefault();
     setQuery(search);
   };
-
-  // const ModalExample = props => {
-  //   const { buttonLabel, className } = props;
-
-  const [modal, setModal] = useState(false);
-
-  const toggle = () => setModal(!modal);
 
   return (
     <div className="search">
@@ -86,37 +67,7 @@ function Search() {
             sourceName={recipe.sourceName}
             diets={recipe.diets}
           />
-          <Card>
-            <CardImg
-              top
-              width="100%"
-              src={recipe.image}
-              alt="Card image caption"
-            />
-            <CardBody>
-              <CardTitle>{recipe.title}</CardTitle>
-              <CardSubtitle>
-                Cooking time {recipe.readyInMinutes}minutes.
-              </CardSubtitle>
-              <CardText>{recipe.cuisines}</CardText>
-              {/* <Button>Show Recipe</Button> */}
-              <Button className="recipe-button" color="danger" onClick={toggle}>
-                Season me up!
-              </Button>
-              <Modal isOpen={modal} toggle={toggle}>
-                <ModalHeader toggle={toggle}>Recipe</ModalHeader>
-                <ModalBody>Recipe Instruction</ModalBody>
-                <ModalFooter>
-                  <Button color="primary" onClick={toggle}>
-                    Save Recipe
-                  </Button>
-                  <Button color="secondary" onClick={toggle}>
-                    Cancel
-                  </Button>
-                </ModalFooter>
-              </Modal>
-            </CardBody>
-          </Card>
+     
         ))}
       </form>
     </div>
