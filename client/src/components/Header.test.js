@@ -13,9 +13,3 @@ test('shows welcome message tagline', () => {
     const title = getByText(/Let me pepper your thoughts!/i);
     expect(title).toBeInTheDocument();
 })
-
-test('shows welcome message tagline', () => {
-    const { getByAltText } = render(<Header />);
-    const title = getByAltText(/pepper your thoughts/i);
-    expect(title).toBeInTheDocument();
-})
