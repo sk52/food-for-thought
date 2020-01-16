@@ -1,41 +1,68 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat','Ibarra Real Nova', sans-serif;
+  font-family: 'Raleway','Ibarra Real Nova', sans-serif;
+  font-weight: 400;
 }
 
 .App{
   width: 100vw;
   height: 100vh;
-  /* background-color: #c9d1ff; */
-  background-color: #d6dee1;
+  background-image: url(./images/minimal3.png);
+  background-size: 50%;
+  background-repeat: repeat-y;
+  background-position: left;
 }
 
 .nav{
-  background-color: #7092a3;
-  height: 10vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  text-align: bottom;
 }
 
 .home {
-  margin-top: 0.5rem;
+  margin-top: 2.5rem;
   margin-left: 2rem;
-  font-size: 3rem;
-  color: white;
-  /* font-family: 'Montserrat','Ibarra Real Nova', sans-serif; */
+  font-size: 6rem;
   text-decoration: none;
+  animation: 2s fromTop;
 }
+
+@keyframes fromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.nav-img {
+  animation: 2s fromRight;
+}
+
+@keyframes fromRight {
+  0% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .header {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   text-align: center;
-  height: 10rem;
+  height: 5rem;
   margin-top: 2rem;
 }
 
 .search {
   font-size: 1.5rem;
   text-align: center;
-  padding-top: 12rem;
-  margin-bottom: 10rem;
+  padding-top: 2rem;
+  margin-bottom: 5rem;
 }
 
 .input {
@@ -48,9 +75,89 @@
 
 .search-button {
   border-radius: 6px;
-  background-color: #AED7CE;
-  border: 2px solid grey;
+  background-color: rgba(102, 0, 51, 0.7);
+  border: 2px solid rgba(102, 0, 51, 1);
   font-size: 1.5rem;
   padding: 8px;
-  box-shadow: 1px 2px 15px 2px #686868;
+  color: white;
+  transition: 1s border, 1s background-color;
+}
+
+.search-button:hover {
+  background-color: rgba(102, 0, 51, 1);
+}
+
+.card-deck {
+  width: 50vw;
+  display: inline-flex !important;
+  flex-flow: row wrap;
+  justify-content: space-evenly !important;
+  align-items: center;
+  margin: 2rem;
+}
+
+.card {
+  display: inline-flex;
+  align-items: center;
+  border: 2px dashed rgba(128,0,64, 0.25);
+}
+
+.recipe-button {
+  border: 2px solid rgb(0, 128, 0);
+  background-color: white;
+  color: rgb(0, 128, 0);
+  transition: 1s 'background color', 1s border, 1s color;
+}
+
+.recipe-button:hover {
+  border: 2px solid rgb(0, 128, 0);
+  background-color: rgb(0, 128, 0);
+  color: white;
+}
+
+.img {
+  margin-top: 1.5rem;
+  max-width: 30vw;
+  max-height: 35vh;
+  border-radius: 16px;
+}
+
+.card-title {
+  font-weight: 700;
+}
+
+.card-subtitle {
+  font-weight: 400;
+}
+.card-text {
+  font-weight: 100;
+}
+
+.wine-text {
+  font-weight: 100;
+}
+
+span {
+  font-weight: 400;
+}
+
+.modal-header {
+  text-align: center;
+}
+
+.popup-body {
+  padding-left: 35px;
+  text-align: center;
+}
+
+.popup-body_two {
+  padding-left: 100px;
+}
+
+.modal-body ul {
+  list-style: none;
+}
+
+.popup-body_three {
+text-align: center;
 }

@@ -46,7 +46,7 @@ function Search() {
         <br />
         <br />
         <button className="search-button" type="submit">
-          Season me up!
+          Season me Up!
         </button>
         <br />
         <br />
