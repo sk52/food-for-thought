@@ -4,6 +4,7 @@
   "description": "A web application which allows users to find a recipe based on the ingredients that they input.",
   "main": "index.js",
   "scripts": {
+    "install:all": "npm install && cd client && npm install",
     "test": "npm run test:integration && npm run test:unit",
     "test:unit": "cd ./client && npm test",
     "test:integration": "cd ./client && npm run test:integration",
@@ -33,7 +34,6 @@
   },
   "devDependencies": {
     "concurrently": "^5.0.2",
-    "jest": "^24.9.0",
     "nodemon": "^2.0.2"
   }
 }
